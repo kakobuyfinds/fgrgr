@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#21172c">
+  <title>FansBuy spreadsheet | Productlinks, maten en QC-foto’s</title>
+  <meta name="description" content="Gebruik de FansBuy spreadsheet als startpunt. Vergelijk productlinks, kies de juiste maat, controleer QC-foto’s en schat de totale pakketkosten.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:title" content="FansBuy spreadsheet | Productlinks, maten en QC-foto’s">
+  <meta property="og:description" content="Van productlink naar pakket. Een Nederlandstalige gids voor maten, magazijnfoto’s en verzendkosten.">
+  <meta property="og:image" content="https://assets.christiandior.com/is/image/diorprod/B3106WOMZID301_SBG_E09-2?%24r9x10_raw%24=&amp;bfc=on&amp;crop=0%2C0%2C4000%2C5000&amp;hei=500&amp;qlt=85&amp;scale=1&amp;wid=400">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Detail van een goudkleurige Dior-armband met kristallen en een pareldetail">
+  <link rel="icon" href="https://www.cafans.com/favicon.ico">
+  <link rel="preconnect" href="https://assets.christiandior.com">
+  <!-- Onderzoek: de Nederlandse Bing-weergave gaf geen resultaten voor de exacte zoekterm.
+       De eerste tien organische resultaten in de standaardweergave besloegen vijf domeinen.
+       Geanalyseerd in volgorde: fansbuy.com/ en /beginnerGuide (agent, productlinks, varianten);
+       fansbuy.org/what-is-fansbuy/ (uitleg inkoopdienst); fansbuy.co.uk/ (categorieën, QC, verzending)
+       en /is-fansbuy-legit/ (onafhankelijke gids); Companies House, dossier 17357407 (bedrijfsregister);
+       Trustpilot, /review/fansbuy.com (reviewintentie); fansbuy.com/user en /register (accountintentie);
+       fansbuy.co.uk/help/ (beginnersvragen, magazijncontrole en pakketkosten).
+       Secundaire zoektermen: FansBuy productlinks, FansBuy koopgids, FansBuy QC-foto’s,
+       FansBuy maattabel, FansBuy verzendkosten. -->
+  <style>
+    :root{color-scheme:light;--plum:#21172c;--paper:#f6f3fa;--ink:#251b30;--muted:#554864;--mint:#d8f6e4;--line:#d9cce4;--accent:#553781}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.62 system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.13;letter-spacing:-.025em}
+    h1{font-size:clamp(2.5rem,7.6vw,6.2rem);line-height:.99}
+    h2{font-size:clamp(1.7rem,3.6vw,2.8rem)}
+    h3{font-size:1.23rem}
+    p+p,h2+p,h3+p{margin-top:.65rem}
+    a{color:inherit;text-underline-offset:.2em}
+    :focus-visible{outline:3px solid #8663b6;outline-offset:3px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .top{background:var(--plum);color:white}
+    .mast{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.25rem 1rem;padding-block:.8rem;border-bottom:1px solid #6e5c7a}
+    .brand{font-weight:850}
+    .label{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .mast .label{color:#e0d0ec}
+    .catalog{padding-block:.9rem 1.2rem}
+    .catalog .label{color:var(--mint)}
+    .catalog ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;margin:.45rem 0 0;padding:0;gap:.35rem}
+    .catalog li{display:flex}
+    .catalog a{display:flex;align-items:center;width:100%;min-height:44px;padding:.35rem .55rem;border:1px solid #6e5c7a;border-radius:.4rem;color:white;text-decoration:none;font-size:.88rem;font-weight:650}
+    .catalog a:hover{background:var(--mint);color:var(--plum)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:.7rem;padding-block:.8rem 2.6rem}
+    .intro{display:grid;align-content:center;justify-items:start;gap:1rem;padding:clamp(1.15rem,4vw,3.4rem);background:var(--mint);border-radius:.6rem}
+    .intro p:not(.label){max-width:49ch;margin:0}
+    .button{display:inline-flex;align-items:center;min-height:44px;padding:.48rem .85rem;border-radius:.35rem;background:var(--plum);color:white;font-weight:750}
+    .button:hover{background:var(--accent)}
+    .cover{display:grid;grid-template-rows:1fr auto;overflow:hidden;border:1px solid var(--line);border-radius:.6rem;background:#e8e5e9}
+    .cover img{width:100%;height:100%;min-height:0;max-height:24rem;display:block;object-fit:cover;object-position:center 56%}
+    figcaption{padding:.55rem .75rem;font-size:.86rem;color:var(--muted)}
+    .section{margin-bottom:2.6rem}
+    .section>.label{margin-bottom:.35rem;color:var(--accent)}
+    .steps,.articles{display:grid;gap:.75rem;margin-top:1rem}
+    .steps{grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;counter-reset:checks;padding:0}
+    .steps li,.articles article{padding:1rem;border:1px solid var(--line);border-radius:.55rem;background:white}
+    .steps li::before{counter-increment:checks;content:"0" counter(checks);display:block;color:var(--accent);font-weight:850;margin-bottom:.45rem}
+    .examples{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;margin-top:1rem}
+    .examples figure{border:1px solid var(--line);border-radius:.55rem;background:white;overflow:hidden}
+    .examples img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#f1edf6}
+    .examples figcaption strong{display:block;color:var(--ink)}
+    .articles{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .articles article{border-top:4px solid var(--accent)}
+    .faq{padding:clamp(1rem,3.5vw,2rem);border-radius:.6rem;background:#ece2f6}
+    details{border-bottom:1px solid #c5b3d7}
+    details:first-of-type{margin-top:.65rem}
+    summary{padding:.72rem 0;cursor:pointer;font-weight:750}
+    details p{margin:0;padding:0 .35rem .8rem 1.15rem;max-width:70ch}
+    footer{padding:1.15rem 0;background:var(--plum);color:white}
+    footer p{font-size:.9rem}
+    @media(max-width:48rem){
+      .catalog ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+      .examples{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:34rem){
+      .catalog ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero,.steps,.articles{grid-template-columns:1fr}
+      .cover img{height:clamp(10rem,50vw,16rem)}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "nl",
+    "name": "FansBuy spreadsheet | Productlinks, maten en QC-foto’s",
+    "description": "Gebruik de FansBuy spreadsheet als startpunt. Vergelijk productlinks, kies de juiste maat, controleer QC-foto’s en schat de totale pakketkosten.",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat is een FansBuy spreadsheet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een FansBuy spreadsheet is een overzicht van productlinks. Je gebruikt het om opties te vinden en te vergelijken. De actuele variant en beschikbaarheid controleer je in de oorspronkelijke advertentie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat doe ik als een FansBuy productlink niet meer werkt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zoek op modelnaam en artikelnummer. Open de nieuwe advertentie en vergelijk verkoper, materiaal, kleur en maat met je oorspronkelijke keuze voordat je bestelt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kun je de echtheid beoordelen met QC-foto’s?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "QC-foto’s laten zien welke variant is aangekomen en helpen zichtbare gebreken opsporen. Voor echtheid zijn controleerbare herkomst en, waar nodig, onafhankelijke verificatie belangrijk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Waarop let ik bij verzending naar Nederland of België?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kies je eigen bestemmingsland en postcode in de verzendcalculator. Vergelijk pakketmaten, factureerbaar gewicht en eventuele kosten bij aankomst voor dezelfde verzendoptie."
+        }
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "Article",
+        "inLanguage": "nl",
+        "headline": "Een FansBuy maattabel lezen",
+        "description": "Vergelijk centimeters met een kledingstuk dat je al draagt."
+      },
+      {
+        "@type": "Article",
+        "inLanguage": "nl",
+        "headline": "FansBuy verzendkosten vergelijken",
+        "description": "Reken per pakket en zet alle kostenposten naast elkaar."
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/fgrgr/">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="mast">
+        <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+        <p class="label">Nederlandstalige koopgids</p>
+      </div>
+      <nav class="catalog" aria-label="Productcategorieën op Cafans">
+        <p class="label">Blader per categorie</p>
+        <ul>
+          <li><a href="https://cafans.com/category-911-Shoes.html">Schoenen</a></li>
+          <li><a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hoodies en truien</a></li>
+          <li><a href="https://cafans.com/category-913-T-Shirts.html">T-shirts</a></li>
+          <li><a href="https://cafans.com/category-914-Jackets.html">Jassen</a></li>
+          <li><a href="https://cafans.com/category-915-Pants%2FShorts.html">Broeken en shorts</a></li>
+          <li><a href="https://cafans.com/category-916-Headwear.html">Petten en mutsen</a></li>
+          <li><a href="https://cafans.com/category-917-Sets.html">Sets</a></li>
+          <li><a href="https://cafans.com/category-918-underwear%2Funderpants.html">Ondergoed</a></li>
+          <li><a href="https://cafans.com/category-919-Jersey.html">Sportshirts</a></li>
+          <li><a href="https://cafans.com/category-920-Accessories.html">Accessoires</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="titel">
+      <div class="intro">
+        <p class="label">Van productlink naar pakket</p>
+        <h1 id="titel">FansBuy spreadsheet</h1>
+        <p>Een FansBuy spreadsheet bundelt productlinks waarmee je je zoektocht begint. Deze gids helpt je de juiste variant te kiezen, magazijnfoto’s te lezen en het totaalbedrag te ramen vóór je een pakket verstuurt.</p>
+        <a class="button" href="https://www.cafans.com">Bekijk het aanbod op Cafans</a>
+      </div>
+      <figure class="cover">
+        <img src="https://assets.christiandior.com/is/image/diorprod/B3106WOMZID301_SBG_E09-2?%24r9x10_raw%24=&amp;bfc=on&amp;crop=0%2C0%2C4000%2C5000&amp;hei=500&amp;qlt=85&amp;scale=1&amp;wid=400" width="400" height="500" loading="eager" fetchpriority="high" alt="Detail van een goudkleurige Dior-armband met kristallen en een pareldetail">
+        <figcaption>Dior als beeldvoorbeeld. Vraag bij een armband om detailfoto’s van de schakels en de sluiting.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="controle">
+      <p class="label">Praktische checklist</p>
+      <h2 id="controle">FansBuy koopgids voor je eerste bestelling</h2>
+      <ol class="steps">
+        <li>
+          <h3>Open de oorspronkelijke advertentie</h3>
+          <p>FansBuy productlinks kunnen verwijzen naar Weidian, Taobao of 1688. Controleer de productlink en de winkelnaam. Noteer het artikelnummer en kijk of de gewenste kleur en maat samen te selecteren zijn.</p>
+        </li>
+        <li>
+          <h3>Leg de gekozen variant vast</h3>
+          <p>Bewaar een schermafbeelding van de maatkeuze, de kleurcode en de productomschrijving. Controleer bij een set of boven- en onderstuk allebei bij de geselecteerde optie horen.</p>
+        </li>
+        <li>
+          <h3>Lees FansBuy QC-foto’s in detail</h3>
+          <p>QC staat voor kwaliteitscontrole. Vergelijk het maatlabel en de kleur op de magazijnfoto’s met je keuze. Vraag bij een afwijking om een foto met meetlint en kijk vóór verzending naar de retourtermijn van de verkoper.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="details">
+      <p class="label">Kijken per producttype</p>
+      <h2 id="details">Vier details die een productfoto je kan tonen</h2>
+      <p>De merkfoto’s zijn voorbeelden voor de checklist. Beschikbaarheid en herkomst controleer je per advertentie.</p>
+      <div class="examples">
+        <figure>
+          <img src="https://i.ebayimg.com/images/g/10AAAOSwUOhjkoQG/s-l500.png" width="500" height="500" loading="lazy" decoding="async" alt="Zwart-witte Nike Dunk Low in zijaanzicht">
+          <figcaption><strong>Nike Dunk Low</strong> Vraag om beide zolen en het maatlabel. Controleer de binnenzoollengte in centimeters.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://au.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-denim-jacket--FVJA29EFY610_PM2_Front%20view.png?hei=480&amp;wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Blauw Louis Vuitton denimjack met monogrampatroon en knopen aan de voorkant">
+          <figcaption><strong>Louis Vuitton denimjack</strong> Vraag om de schouderbreedte en een detailfoto van de knopen en manchetten.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/HEXFBFBFB_South_0_160_640x640/1751298339/838745_3HBC4_2600_001_100_0000_Light.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Beige Gucci-pet met bruin GG-patroon en gebogen klep">
+          <figcaption><strong>Gucci GG-pet</strong> Meet je hoofdomtrek en controleer het verstelbereik en de sluiting achterop.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracelet-clic-h--700001F%204P-front-1-300-0-1000-1000_b.jpg" width="1000" height="1000" loading="lazy" decoding="async" alt="Crèmekleurige Hermès Clic H-armband met goudkleurige H-sluiting">
+          <figcaption><strong>Hermès Clic H</strong> Vergelijk de binnenomtrek met je polsomtrek en laat het scharnier open en dicht fotograferen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="artikelen">
+      <p class="label">Twee artikelen</p>
+      <h2 id="artikelen">Van pasvorm tot pakketkosten</h2>
+      <div class="articles">
+        <article>
+          <h3>Een FansBuy maattabel lezen</h3>
+          <p><strong>Vergelijk centimeters met een kledingstuk dat je al draagt.</strong></p>
+          <p>Leg een goed passend shirt plat en meet de borstbreedte van oksel tot oksel. Kijk of de verkoper die platte breedte of de volledige borstomtrek vermeldt. Verdubbel je platte maat alleen voor een vergelijking met de omtrek.</p>
+          <p>Meet bij een broek de taille plat en neem de binnenbeenlengte op vanaf het kruis. Vergelijk bij een jas de mouwlengte én schouderbreedte. Gebruik bij schoenen de voetlengte voor een tabel met voetmaten en de binnenzoollengte voor een tabel met zoolmaten.</p>
+        </article>
+        <article>
+          <h3>FansBuy verzendkosten vergelijken</h3>
+          <p><strong>Reken per pakket en zet alle kostenposten naast elkaar.</strong></p>
+          <p>Noteer de artikelprijs, de binnenlandse verzending naar het magazijn en de internationale verzending afzonderlijk. Neem ook opgegeven servicekosten en eventuele invoer- en afhandelingskosten mee.</p>
+          <p>Vraag naar het werkelijke gewicht én de buitenmaten van de doos. De vervoerder kan het volumetrisch gewicht gebruiken om het factureerbare gewicht te bepalen. Vergelijk daarom de schatting voor losse pakketten met de schatting voor één gebundeld pakket, telkens voor dezelfde bestemming.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="vragen">
+      <p class="label">FAQ</p>
+      <h2 id="vragen">Veelgestelde vragen</h2>
+      <details open>
+        <summary>Wat is een FansBuy spreadsheet?</summary>
+        <p>Een FansBuy spreadsheet is een overzicht van productlinks. Je gebruikt het om opties te vinden en te vergelijken. De actuele variant en beschikbaarheid controleer je in de oorspronkelijke advertentie.</p>
+      </details>
+      <details>
+        <summary>Wat doe ik als een FansBuy productlink niet meer werkt?</summary>
+        <p>Zoek op modelnaam en artikelnummer. Open de nieuwe advertentie en vergelijk verkoper, materiaal, kleur en maat met je oorspronkelijke keuze voordat je bestelt.</p>
+      </details>
+      <details>
+        <summary>Kun je de echtheid beoordelen met QC-foto’s?</summary>
+        <p>QC-foto’s laten zien welke variant is aangekomen en helpen zichtbare gebreken opsporen. Voor echtheid zijn controleerbare herkomst en, waar nodig, onafhankelijke verificatie belangrijk.</p>
+      </details>
+      <details>
+        <summary>Waarop let ik bij verzending naar Nederland of België?</summary>
+        <p>Kies je eigen bestemmingsland en postcode in de verzendcalculator. Vergelijk pakketmaten, factureerbaar gewicht en eventuele kosten bij aankomst voor dezelfde verzendoptie.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <p>Onafhankelijke koopgids. Merknamen dienen ter identificatie van de afgebeelde producten.</p>
+    </div>
+  </footer>
+</body>
+</html>
